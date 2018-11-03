@@ -10,6 +10,8 @@ from rest_framework_jwt.serializers import VerifyJSONWebTokenSerializer
 # 1.每次登录 response 处理 记录 jwt
 # 2.每次请求判断 jwt是否与表中相等(相当于 用户 异设备登录获取了新的jwt)  不等 就修改uuid
 
+# 详 见 https://blog.csdn.net/qq_33042187/article/details/83347337
+
 
 class ValidTokenMiddleware(object):
     def process_request(self, request):
