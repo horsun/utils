@@ -7,8 +7,8 @@
   - result_response.py    # response 格式统一
 
 - picture_mark # 图片添加水印
- - microsoft_yahei.ttf    # 雅黑字体
- - deal_img_grade.py      # 添加水印
+  - microsoft_yahei.ttf    # 雅黑字体
+  - deal_img_grade.py      # 添加水印
 
 - cos_file_upload.py      # 腾讯云存储
 
