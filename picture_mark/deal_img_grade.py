@@ -11,6 +11,10 @@ def mark_my_pic(user_head=None, background=Image.open(BASE_IMAGE_PATH)):
     :param background: 被添加水印的base图
     :return:
     """
+    # 修改image的mode 为RGB格式
+    bg_mode = background.mode
+    if bg_mode != 'RGB':
+        background = background.convert("RGB")
     avatar = Image.open(user_head)
 
     # 头像初始化大小
