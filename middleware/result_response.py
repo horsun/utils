@@ -11,7 +11,6 @@ class ResultMiddleware(object):
                     response.data.update({"code": 1, "msg": "请求成功"})
                 else:
                     response.data.update({"code": 0, "msg": "请求失败"})
-                response.content = json.dumps(response.data)
             if isinstance(response.data, str):
                 msg = response.data
                 response.data = {"msg": msg, "code": 1}
@@ -19,5 +18,5 @@ class ResultMiddleware(object):
                     pass
                 else:
                     response.data.update({"code": 0, })
-                response.content = json.dumps(response.data)
+            response.content = json.dumps(response.data)
         return response
