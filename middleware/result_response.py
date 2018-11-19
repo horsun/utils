@@ -18,5 +18,12 @@ class ResultMiddleware(object):
                     pass
                 else:
                     response.data.update({"code": 0, })
+            if isinstance(response.data,list):
+                data = response.data
+                response.data = {"data":data}
+                if is_success(response.status_code):
+                    response.data.update({"code": 1, "msg": "请求成功"})
+                else:
+                    response.data.update({"code": 0, "msg": "请求失败"})
             response.content = json.dumps(response.data)
         return response
